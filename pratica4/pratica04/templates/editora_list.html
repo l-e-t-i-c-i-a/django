@@ -1,0 +1,15 @@
+<h1>Lista de Editoras</h1>
+
+<a href="{% url 'editora_create' %}">Nova Editora</a>
+
+<ul>
+    {% for editora in editoras %}
+    <li>
+        {{ editora.nome }} 
+        [<a href="{% url 'editora_update' editora.pk %}">Editar</a>] 
+        [<a href="{% url 'editora_delete' editora.pk %}">Deletar</a>]
+    </li>
+    {% empty %}
+    <li>Nenhuma editora cadastrada.</li>
+    {% endfor %}
+</ul>

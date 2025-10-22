@@ -1,0 +1,17 @@
+<h1>Lista de Publicações (Livro - Autor)</h1>
+
+<a href="{% url 'publica_create' %}">Nova Associação (Publicação)</a>
+
+<ul>
+    {% for publicacao in publicacoes %}
+    <li>
+        Livro: {{ publicacao.livro.titulo }} 
+        por Autor: {{ publicacao.autor.nome }} 
+        
+        [<a href="{% url 'publica_update' publicacao.pk %}">Editar</a>] 
+        [<a href="{% url 'publica_delete' publicacao.pk %}">Deletar</a>]
+    </li>
+    {% empty %}
+    <li>Nenhuma publicação (associação Livro-Autor) cadastrada.</li>
+    {% endfor %}
+</ul>

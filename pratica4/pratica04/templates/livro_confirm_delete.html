@@ -1,0 +1,9 @@
+<h1>Deletar livro</h1>
+
+<p>Tem certeza que deseja deletar o livro **"{{ object.nome }}"**?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sim, Deletar</button>
+    <a href="{% url 'livro_list' %}">Não, Voltar</a>
+</form>

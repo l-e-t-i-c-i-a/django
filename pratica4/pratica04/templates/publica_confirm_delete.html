@@ -1,0 +1,9 @@
+<h1>Deletar Associação</h1>
+
+<p>Tem certeza que deseja deletar a associação do Livro **"{{ object.livro.titulo }}"** com o Autor **"{{ object.autor.nome }}"**?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sim, Deletar</button>
+    <a href="{% url 'publica_list' %}">Não, Voltar</a>
+</form>

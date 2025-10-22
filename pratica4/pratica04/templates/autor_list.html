@@ -1,0 +1,15 @@
+<h1>Lista de autores</h1>
+
+<a href="{% url 'autor_create' %}">Novo autor</a>
+
+<ul>
+    {% for autor in autores %}
+    <li>
+        {{ autor.nome }} 
+        [<a href="{% url 'autor_update' autor.pk %}">Editar</a>] 
+        [<a href="{% url 'autor_delete' autor.pk %}">Deletar</a>]
+    </li>
+    {% empty %}
+    <li>Nenhum autor cadastrado.</li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,9 @@
+<h1>Deletar autor</h1>
+
+<p>Tem certeza que deseja deletar o autor **"{{ object.nome }}"**?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sim, Deletar</button>
+    <a href="{% url 'autor_list' %}">Não, Voltar</a>
+</form>

@@ -1,0 +1,9 @@
+<h1>Deletar Editora</h1>
+
+<p>Tem certeza que deseja deletar a editora **"{{ object.nome }}"**?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sim, Deletar</button>
+    <a href="{% url 'editora_list' %}">Não, Voltar</a>
+</form>

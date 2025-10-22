@@ -1,0 +1,15 @@
+{% if form.instance.pk %}
+    <h1>Editar Associação</h1>
+    <p>Livro: {{ form.instance.livro.titulo }} | Autor: {{ form.instance.autor.nome }}</p>
+{% else %}
+    <h1>Cadastrar Nova Associação (Publicação)</h1>
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    
+    {{ form.as_p }} 
+
+    <button type="submit">Salvar</button>
+    <a href="{% url 'publica_list' %}">Cancelar</a>
+</form>
